@@ -42,56 +42,40 @@
             <h2>Rendelési űrlap</h2>
         
             <label for="nev">Név</label>
-            <input type="text" id="nev" name="nev" required>
+            <input type="text" id="nev" name="nev" >
 
-            <h3>Számlázási cím</h3>
+            <h3>Számlázási és Szállítási cím</h3>
             <label for="orszag">Ország</label>
-            <input type="text" id="orszag" name="orszag" required>
+            <input type="text" id="orszag" name="orszag" >
         
             <label for="iranyitoszam">Irányítószám</label>
-            <input type="text" id="iranyitoszam" name="iranyitoszam" required pattern="\d{4}">
+            <input type="text" id="iranyitoszam" name="iranyitoszam"  pattern="\d{4}">
         
             <label for="varos">Város</label>
-            <input type="text" id="varos" name="varos" required>
+            <input type="text" id="varos" name="varos" >
         
             <label for="utcaHazszam">Utca és házszám</label>
-            <input type="text" id="utcaHazszam" name="utcaHazszam" required>
-        
-            <h3>Szállítási cím</h3>
-            <label for="szallitasiAzonos">
-                <input type="checkbox" id="szallitasiAzonos"> Ugyanaz, mint a számlázási cím
-            </label>
-            
-            <div id="szallitasiCim">
-                <label for="szallitasiOrszag">Ország</label>
-                <input type="text" id="szallitasiOrszag" name="szallitasiOrszag">
-        
-                <label for="szallitasiIranyitoszam">Irányítószám</label>
-                <input type="text" id="szallitasiIranyitoszam" name="szallitasiIranyitoszam" pattern="\d{4}">
-        
-                <label for="szallitasiVaros">Város</label>
-                <input type="text" id="szallitasiVaros" name="szallitasiVaros">
-        
-                <label for="szallitasiUtcaHazszam">Utca és házszám</label>
-                <input type="text" id="szallitasiUtcaHazszam" name="szallitasiUtcaHazszam">
-            </div>
+            <input type="text" id="utcaHazszam" name="utcaHazszam" >
         
             <label for="kuponkod">Kuponkód (opcionális)</label>
             <input type="text" id="kuponkod" name="kuponkod" pattern="[A-Z]{2}-\d{4}" placeholder="pl. PT-1255">
 
             <h3>Fizetési adatok</h3>
             <label for="bankkartyaszam">Bankkártya szám</label>
-            <input type="text" id="bankkartyaszam" name="bankkartyaszam" required pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder="XXXX-XXXX-XXXX-XXXX">
+            <input type="text" id="bankkartyaszam" name="bankkartyaszam"  pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder="XXXX-XXXX-XXXX-XXXX">
         
             <label for="lejaratiDatum">Lejárati dátum (HH/ÉÉ)</label>
-            <input type="text" id="lejaratiDatum" name="lejaratiDatum" required pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="HH/ÉÉ">
+            <input type="text" id="lejaratiDatum" name="lejaratiDatum"  pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="HH/ÉÉ">
             <span class="error" id="lejaratiDatumHiba"></span>
         
             <label for="biztonsagiKod">Biztonsági kód</label>
-            <input type="text" id="biztonsagiKod" name="biztonsagiKod" required pattern="\d{3}" placeholder="3 számjegy">
+            <input type="text" id="biztonsagiKod" name="biztonsagiKod"  pattern="\d{3}" placeholder="3 számjegy">
         
             <button type="submit">Rendelés leadása</button>
         </form>
+        <% if( a ){
+            %><p></p>
+        } %>
     </div>
 </body>
 </html>
