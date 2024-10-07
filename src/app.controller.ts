@@ -27,7 +27,6 @@ export class AppController {
       varos: Varos,
       kupon: kupon,
       uhSzam: UHszam
-
     }
 
     if(Nev == "" || Orszag == "" || IrSzam == "" || Varos == "" || UHszam == "" || bkSzam == ""|| lDatum =="" || bKod == ""){
@@ -40,15 +39,6 @@ export class AppController {
       return {
         a:"Irányítószám formátuma nem megfelelő!",
         Rendeles
-      }
-    }
-    else if(kupon != ""){
-      if (!/^[A-Z]{2}-\d{4}$/.test(kupon)) {
-        Rendeles.kupon = "";
-        return {
-          a:"Kupon formátuma nem megfelelő!",
-          Rendeles
-        }
       }
     }
     else if(!/^\d{4}-\d{4}-\d{4}-\d{4}$/.test(bkSzam)){
@@ -69,8 +59,15 @@ export class AppController {
         Rendeles
       }
     }
+    else if(kupon != "" && !/^[A-Z]{2}-\d{4}$/.test(kupon)){
+        Rendeles.kupon = "";
+        return {
+          a:"Kupon formátuma nem megfelelő!",
+          Rendeles
+        }
+    }
     else{
-      return response.redirect("/sikeresRendeles")
+        return response.redirect("/sikeresRendeles")
     }
 
   }
