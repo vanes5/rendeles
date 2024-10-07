@@ -10,8 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
-        <div class="card" style="width: 18rem;">
+    <div class="termekek">
+        <div class="card termek" style="width: 18rem;">
             <img src="/img/zokni.jpg" class="card-img-top" alt="Funky Zokni">
             <div class="card-body">
             <h5 class="card-title">Zokni</h5>
@@ -19,7 +19,7 @@
             <input type="submit" name="megvetel" class="btn btn-primary" value="Kosárba rakás"/>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card termek" style="width: 18rem;">
             <img src="/img/nadrag.jpg" class="card-img-top" alt="Szép naci">
             <div class="card-body">
             <h5 class="card-title">Nadrág</h5>
@@ -27,7 +27,7 @@
             <input type="submit" name="megvetel" class="btn btn-primary" value="Kosárba rakás"/>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card termek" style="width: 18rem;">
             <img src="/img/polo.jpg" class="card-img-top" alt="Csini póló">
             <div class="card-body">
             <h5 class="card-title">Póló</h5>
@@ -42,40 +42,38 @@
             <h2>Rendelési űrlap</h2>
         
             <label for="nev">Név</label>
-            <input type="text" id="nev" name="nev" >
+            <input type="text" id="nev" name="nev" value="<%= Rendeles.nev %>">
 
             <h3>Számlázási és Szállítási cím</h3>
             <label for="orszag">Ország</label>
-            <input type="text" id="orszag" name="orszag" >
+            <input type="text" id="orszag" name="orszag" value="<%= Rendeles.orszag %>">
         
             <label for="iranyitoszam">Irányítószám</label>
-            <input type="text" id="iranyitoszam" name="iranyitoszam"  pattern="\d{4}">
+            <input type="text" id="iranyitoszam" name="iranyitoszam" value="<%= Rendeles.irszam %>">
         
             <label for="varos">Város</label>
-            <input type="text" id="varos" name="varos" >
+            <input type="text" id="varos" name="varos" value="<%= Rendeles.varos %>">
         
             <label for="utcaHazszam">Utca és házszám</label>
-            <input type="text" id="utcaHazszam" name="utcaHazszam" >
+            <input type="text" id="utcaHazszam" name="utcaHazszam" value="<%= Rendeles.uhSzam %>">
         
             <label for="kuponkod">Kuponkód (opcionális)</label>
-            <input type="text" id="kuponkod" name="kuponkod" pattern="[A-Z]{2}-\d{4}" placeholder="pl. PT-1255">
+            <input type="text" id="kuponkod" name="kuponkod" placeholder="pl. PT-1255" value="<%= Rendeles.kupon %>">
 
             <h3>Fizetési adatok</h3>
             <label for="bankkartyaszam">Bankkártya szám</label>
-            <input type="text" id="bankkartyaszam" name="bankkartyaszam"  pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder="XXXX-XXXX-XXXX-XXXX">
+            <input type="text" id="bankkartyaszam" name="bankkartyaszam" placeholder="XXXX-XXXX-XXXX-XXXX">
         
             <label for="lejaratiDatum">Lejárati dátum (HH/ÉÉ)</label>
-            <input type="text" id="lejaratiDatum" name="lejaratiDatum"  pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="HH/ÉÉ">
+            <input type="text" id="lejaratiDatum" name="lejaratiDatum" placeholder="HH/ÉÉ">
             <span class="error" id="lejaratiDatumHiba"></span>
         
             <label for="biztonsagiKod">Biztonsági kód</label>
-            <input type="text" id="biztonsagiKod" name="biztonsagiKod"  pattern="\d{3}" placeholder="3 számjegy">
+            <input type="text" id="biztonsagiKod" name="biztonsagiKod" placeholder="3 számjegy">
         
             <button type="submit">Rendelés leadása</button>
         </form>
-        <% if( a ){
-            %><p></p>
-        } %>
+        <p><%= a %></p>
     </div>
 </body>
 </html>
